@@ -43,6 +43,7 @@ public class SecurityConfig {
                     // EndPoints publicos
                     http.requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll(); // Rutas de Swagger
                     http.requestMatchers(HttpMethod.POST, "/auth/**").permitAll();
+                    http.requestMatchers("/actuator/**").permitAll(); // Permitir acceso público a Actuator
 
                     // EndPoints Privados
                     http.requestMatchers(HttpMethod.GET, "/method/get").hasAuthority("READ");
